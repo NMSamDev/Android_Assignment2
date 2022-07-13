@@ -3,6 +3,10 @@ package com.example.carlosmendez_assignment_2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.carlosmendez_assignment_2.databinding.ActivityMainBinding
+import com.google.android.material.tabs.TabLayoutMediator
+
+val musicArray = arrayOf("Rock", "Classic", "Pop")
+val iconsArray = arrayOf(R.drawable.ic_rock, R.drawable.ic_classic, R.drawable.ic_pop)
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -10,7 +14,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
-
         setContentView(view)
+
+        val viewPager = binding.viewPager
+        val tabLayout = binding.tabsLayout
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = musicArray[position]
+            tab.icon = getDrawable(iconsArray[position])
+        }.attach()
     }
 }
