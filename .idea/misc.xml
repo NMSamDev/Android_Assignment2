@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_beluga_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_favorite_background.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.254981884057971" />
+        <entry key="app/src/main/res/layout/classic_fragment.xml" value="0.20677083333333332" />
+        <entry key="app/src/main/res/layout/fragment_pop.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_rock.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/pop_fragment.xml" value="0.20677083333333332" />
         <entry key="app/src/main/res/layout/rock_fragment.xml" value="0.254981884057971" />
         <entry key="app/src/main/res/layout/song_item.xml" value="0.418263134057971" />
       </map>

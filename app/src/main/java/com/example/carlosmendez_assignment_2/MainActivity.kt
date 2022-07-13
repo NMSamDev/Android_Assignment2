@@ -2,7 +2,10 @@ package com.example.carlosmendez_assignment_2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.carlosmendez_assignment_2.R
 import com.example.carlosmendez_assignment_2.databinding.ActivityMainBinding
+import com.example.carlosmendez_assignment_2.views.ViewPagerAdapter
+
 import com.google.android.material.tabs.TabLayoutMediator
 
 val musicArray = arrayOf("Rock", "Classic", "Pop")
@@ -18,6 +21,10 @@ class MainActivity : AppCompatActivity() {
 
         val viewPager = binding.viewPager
         val tabLayout = binding.tabsLayout
+
+        val adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
+        viewPager.adapter = adapter
+
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = musicArray[position]
