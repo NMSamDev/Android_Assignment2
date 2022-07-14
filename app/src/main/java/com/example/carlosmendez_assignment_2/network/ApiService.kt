@@ -10,9 +10,9 @@ interface ApiService {
     @GET("search")
     fun getSongResponse(
         @Query("term") term: String,
-        @Query("amp;media") media: String,
-        @Query("amp;entity") entity: String,
-        @Query("amp;limit") limit: String
+        @Query("amp;media") media: String = "music",
+        @Query("amp;entity") entity: String = "song",
+        @Query("amp;limit") limit: Int = 50
         ): retrofit2.Call<SongResponse>
 
     companion object {

@@ -1,5 +1,7 @@
 package com.example.carlosmendez_assignment_2.views
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -18,12 +20,22 @@ class SongAdapter(
                 // Text
                 binding.tvArtistName.text = song.artistName
                 binding.tvCollectionName.text = song.collectionName
-                binding.tvPrice.text = song.trackPrice
+                binding.tvPrice.text = song.trackPrice + " USD"
 
                 // Image
                 Glide.with(binding.ivAlbumCover)
                     .load(song.artworkUrl60)
+                    .placeholder(R.mipmap.ic_beluga)
                     .into(binding.ivAlbumCover)
+
+                // Play song preview
+                binding.root.setOnClickListener {
+
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.setAction(Intent.ACTION_VIEW)
+                    intent.setDataAndType(Uri.parse(song.previewUrl), "audio/*")
+                    binding.root.context.startActivity(intent)
+                }
             }
 
 
@@ -41,6 +53,6 @@ class SongAdapter(
     }
 
     override fun getItemCount(): Int {
-        return 3
+        return songList.size
     }
 }
