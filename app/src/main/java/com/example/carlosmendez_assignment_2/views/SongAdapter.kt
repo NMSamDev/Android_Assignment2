@@ -30,7 +30,6 @@ class SongAdapter(
 
                 // Play song preview
                 binding.root.setOnClickListener {
-
                     val intent = Intent(Intent.ACTION_VIEW)
                     intent.setAction(Intent.ACTION_VIEW)
                     intent.setDataAndType(Uri.parse(song.previewUrl), "audio/*")
